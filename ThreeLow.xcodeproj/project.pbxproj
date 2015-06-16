@@ -14,6 +14,8 @@
 		FA6FBFF31B309B1A00916956 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6FBFF21B309B1A00916956 /* Images.xcassets */; };
 		FA6FBFF61B309B1A00916956 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6FBFF41B309B1A00916956 /* LaunchScreen.xib */; };
 		FA6FC0021B309B1A00916956 /* ThreeLowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FC0011B309B1A00916956 /* ThreeLowTests.m */; };
+		FA6FC00D1B30A10400916956 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FC00C1B30A10400916956 /* GameModel.m */; };
+		FA6FC0101B30C7FE00916956 /* Dice.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6FC00F1B30C7FE00916956 /* Dice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		FA6FBFFB1B309B1A00916956 /* ThreeLowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeLowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6FC0001B309B1A00916956 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA6FC0011B309B1A00916956 /* ThreeLowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeLowTests.m; sourceTree = "<group>"; };
+		FA6FC00B1B30A10400916956 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		FA6FC00C1B30A10400916956 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
+		FA6FC00E1B30C7FE00916956 /* Dice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dice.h; sourceTree = "<group>"; };
+		FA6FC00F1B30C7FE00916956 /* Dice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dice.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,10 @@
 			children = (
 				FA6FBFE91B309B1A00916956 /* AppDelegate.h */,
 				FA6FBFEA1B309B1A00916956 /* AppDelegate.m */,
+				FA6FC00E1B30C7FE00916956 /* Dice.h */,
+				FA6FC00F1B30C7FE00916956 /* Dice.m */,
+				FA6FC00B1B30A10400916956 /* GameModel.h */,
+				FA6FC00C1B30A10400916956 /* GameModel.m */,
 				FA6FBFEC1B309B1A00916956 /* ViewController.h */,
 				FA6FBFED1B309B1A00916956 /* ViewController.m */,
 				FA6FBFEF1B309B1A00916956 /* Main.storyboard */,
@@ -219,7 +229,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6FC0101B30C7FE00916956 /* Dice.m in Sources */,
 				FA6FBFEE1B309B1A00916956 /* ViewController.m in Sources */,
+				FA6FC00D1B30A10400916956 /* GameModel.m in Sources */,
 				FA6FBFEB1B309B1A00916956 /* AppDelegate.m in Sources */,
 				FA6FBFE81B309B1A00916956 /* main.m in Sources */,
 			);
