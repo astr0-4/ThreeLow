@@ -7,7 +7,7 @@
 //
 
 #import "GameModel.h"
-#import "Dice.h"
+
 
 @implementation GameModel {
     NSArray *diceArray;
@@ -18,13 +18,25 @@
     diceArray = [[NSArray alloc] init];
     self = [super init];
     if (self) {
-        diceArray = @[@"⚀",@"⚁",@"⚂",@"⚃",@"⚄",@"⚅"];
+        
+        NSMutableArray *tempDiceArray = [[NSMutableArray alloc] init];
+        
+        [tempDiceArray addObject:[[Dice alloc] init]];
+        [tempDiceArray addObject:[[Dice alloc] init]];
+        [tempDiceArray addObject:[[Dice alloc] init]];
+        [tempDiceArray addObject:[[Dice alloc] init]];
+        [tempDiceArray addObject:[[Dice alloc] init]];
+        
+        self.diceArray = [NSArray arrayWithArray:tempDiceArray];
     }
     return self;
 }
 
--(NSString *)rollTheDice {
+-(NSString *)rollTheDice:(Dice *)dice {
+    if(!dice.isCurrentlyHeld) {
     return diceArray[arc4random_uniform(6)];
+    }
+    return dice.textValue;
 }
 
 //-(void)currentScoreTracker:(Dice *)dice {

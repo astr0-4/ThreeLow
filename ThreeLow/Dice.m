@@ -12,10 +12,9 @@
 
 -(void)holdDiceAndStoreInArray {
     NSMutableArray *diceHeld = [[NSMutableArray alloc] init];
-    if(self.diceCurrentlyHeld) {
+    if(self.isCurrentlyHeld) {
         [diceHeld addObject:self];
     }
 }
-
 
 @end

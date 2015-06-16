@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Dice.h"
 
 @interface GameModel : NSObject
 
-@property(nonatomic, weak) NSString *diceImage;
 @property(nonatomic, strong) NSArray *diceArray;
 
 -(instancetype)initWithDice;
--(NSString *)rollTheDice;
+-(NSString *)rollTheDice:(Dice *)dice;
 
 @end

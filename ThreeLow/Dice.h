@@ -10,7 +10,7 @@
 
 @interface Dice : NSObject
 
-@property(nonatomic) BOOL diceCurrentlyHeld;
+@property(nonatomic) BOOL isCurrentlyHeld;
 
 @property(nonatomic) NSString *textValue;
 

@@ -12,64 +12,72 @@
 
 @interface ViewController ()
 
-//@property (strong, nonatomic) GameModel *gameModel;
-@property (strong, nonatomic) GameModel *diceArray;
-@property (strong, nonatomic) Dice *dice;
-
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.diceArray = [[GameModel alloc] initWithDice];
-    self.dice = [[Dice alloc] init];
-    
-    // Do any additional setup after loading the view, typically from a nib.
+    self.game = [[GameModel alloc] initWithDice];
+    [self refreshView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-   
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)holdDice1:(id)sender {
-    [self.dice1 setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
-     self.dice.diceCurrentlyHeld = YES;
-//    NSMutableArray *heldDiceArray = [[NSMutableArray alloc] init];
-//    [heldDiceArray addObject:self.dice1.titleLabel.text];
-//    NSLog(@"%@", heldDiceArray);
+    [self.diceButton1 setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    Dice *tempDice = self.game.diceArray[0];
+     tempDice.isCurrentlyHeld = YES;
 }
 
 - (IBAction)holdDice2:(id)sender {
-    [self.dice2 setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    [self.diceButton2 setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    Dice *tempDice = self.game.diceArray[1];
+    tempDice.isCurrentlyHeld = YES;
 }
 
 - (IBAction)holdDice3:(id)sender {
-    [self.dice3 setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    [self.diceButton3 setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    Dice *tempDice = self.game.diceArray[2];
+    tempDice.isCurrentlyHeld = YES;
 }
 
 - (IBAction)holdDice4:(id)sender {
-    [self.dice4 setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    [self.diceButton4 setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    Dice *tempDice = self.game.diceArray[3];
+    tempDice.isCurrentlyHeld = YES;
 }
 
 - (IBAction)holdDice5:(id)sender {
-    [self.dice5 setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    [self.diceButton5 setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    Dice *tempDice = self.game.diceArray[4];
+    tempDice.isCurrentlyHeld = YES;
 }
 
 - (IBAction)rollDice:(id)sender {
-    self.dice1.titleLabel.text = [self.diceArray rollTheDice];
-    self.dice2.titleLabel.text = [self.diceArray rollTheDice];
-    self.dice3.titleLabel.text = [self.diceArray rollTheDice];
-    self.dice4.titleLabel.text = [self.diceArray rollTheDice];
-    self.dice5.titleLabel.text = [self.diceArray rollTheDice];
+    
+    self.diceButton1.titleLabel.text = [self.game.diceArray[0] rollTheDice:self.game.diceArray[0]];
+    self.diceButton2.titleLabel.text = [self.game.diceArray[1] rollTheDice:self.game.diceArray[1]];
+    self.diceButton3.titleLabel.text = [self.game.diceArray[2] rollTheDice:self.game.diceArray[2]];
+    self.diceButton4.titleLabel.text = [self.game.diceArray[3] rollTheDice:self.game.diceArray[3]];
+    self.diceButton5.titleLabel.text = [self.game.diceArray[4] rollTheDice:self.game.diceArray[4]];
 }
 
 - (IBAction)resetDice:(id)sender {
    // self.dice1.titleLabel.text = [self.diceArray[0]];
 }
 
+-(void)refreshView {
+        NSArray *diceImages = @[@"⚀", @"⚁", @"⚂", @"⚃", @"⚄", @"⚅"];
+        self.diceButton1.titleLabel.text = diceImages[0];
+        self.diceButton2.titleLabel.text = diceImages[1];
+        self.diceButton3.titleLabel.text = diceImages[2];
+        self.diceButton4.titleLabel.text = diceImages[3];
+        self.diceButton5.titleLabel.text = diceImages[4];
+
+}
 
 
 

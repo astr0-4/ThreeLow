@@ -135,11 +135,11 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="dice1" destination="Tq8-8U-ELD" id="Nm3-38-RxF"/>
-                        <outlet property="dice2" destination="UVD-Lj-0ay" id="w5M-FJ-L2K"/>
-                        <outlet property="dice3" destination="bgk-rx-TbF" id="uNG-I1-QUp"/>
-                        <outlet property="dice4" destination="mr4-P8-I9k" id="DkP-dT-vjR"/>
-                        <outlet property="dice5" destination="Obt-wE-JSc" id="T0W-33-yPi"/>
+                        <outlet property="diceButton1" destination="Tq8-8U-ELD" id="Cr5-8H-nov"/>
+                        <outlet property="diceButton2" destination="UVD-Lj-0ay" id="OIS-6o-PfI"/>
+                        <outlet property="diceButton3" destination="bgk-rx-TbF" id="m4L-B7-1Kr"/>
+                        <outlet property="diceButton4" destination="mr4-P8-I9k" id="F8t-gc-moq"/>
+                        <outlet property="diceButton5" destination="Obt-wE-JSc" id="foe-9F-QOG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
