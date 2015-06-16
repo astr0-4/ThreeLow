@@ -76,7 +76,6 @@
         self.diceButton3.titleLabel.text = diceImages[2];
         self.diceButton4.titleLabel.text = diceImages[3];
         self.diceButton5.titleLabel.text = diceImages[4];
-
 }
 
 
