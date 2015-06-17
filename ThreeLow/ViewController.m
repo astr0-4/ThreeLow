@@ -58,15 +58,34 @@
 
 - (IBAction)rollDice:(id)sender {
     
-    self.diceButton1.titleLabel.text = [self.game.diceArray[0] rollTheDice:self.game.diceArray[0]];
-    self.diceButton2.titleLabel.text = [self.game.diceArray[1] rollTheDice:self.game.diceArray[1]];
-    self.diceButton3.titleLabel.text = [self.game.diceArray[2] rollTheDice:self.game.diceArray[2]];
-    self.diceButton4.titleLabel.text = [self.game.diceArray[3] rollTheDice:self.game.diceArray[3]];
-    self.diceButton5.titleLabel.text = [self.game.diceArray[4] rollTheDice:self.game.diceArray[4]];
+    self.diceButton1.titleLabel.text = [self.game rollTheDice:self.game.diceArray[0]];
+    self.diceButton2.titleLabel.text = [self.game rollTheDice:self.game.diceArray[1]];
+    self.diceButton3.titleLabel.text = [self.game rollTheDice:self.game.diceArray[2]];
+    self.diceButton4.titleLabel.text = [self.game rollTheDice:self.game.diceArray[3]];
+    self.diceButton5.titleLabel.text = [self.game rollTheDice:self.game.diceArray[4]];
 }
 
 - (IBAction)resetDice:(id)sender {
-   // self.dice1.titleLabel.text = [self.diceArray[0]];
+        if(self.game.diceArray[0]) {
+            self.diceButton1.titleLabel.text = @"⚀";
+            [self.diceButton1 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        }
+        else if (self.game.diceArray[1]){
+            self.diceButton2.titleLabel.text = @"⚁";
+            [self.diceButton2 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        }
+        else if (self.game.diceArray[2]){
+            self.diceButton3.titleLabel.text = @"⚂";
+            [self.diceButton3 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        }
+        else if (self.game.diceArray[3]) {
+            self.diceButton4.titleLabel.text = @"⚂";
+            [self.diceButton4 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        }
+        else if (self.game.diceArray[4]) {
+            self.diceButton5.titleLabel.text = @"⚃";
+            [self.diceButton5 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        }
 }
 
 -(void)refreshView {

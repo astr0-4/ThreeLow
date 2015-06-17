@@ -9,13 +9,11 @@
 #import "GameModel.h"
 
 
-@implementation GameModel {
-    NSArray *diceArray;
-}
-
+@implementation GameModel
+    
 - (instancetype)initWithDice
 {
-    diceArray = [[NSArray alloc] init];
+    self.diceArray = [[NSArray alloc] init];
     self = [super init];
     if (self) {
         
@@ -34,9 +32,9 @@
 
 -(NSString *)rollTheDice:(Dice *)dice {
     if(!dice.isCurrentlyHeld) {
-    return diceArray[arc4random_uniform(6)];
+       return self.diceArray[arc4random_uniform(5)];
     }
-    return dice.textValue;
+    return nil;
 }
 
 //-(void)currentScoreTracker:(Dice *)dice {
