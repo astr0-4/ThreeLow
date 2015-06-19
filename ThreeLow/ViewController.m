@@ -57,44 +57,61 @@
 }
 
 - (IBAction)rollDice:(id)sender {
-    
-    self.diceButton1.titleLabel.text = [self.game rollTheDice:self.game.diceArray[0]];
-    self.diceButton2.titleLabel.text = [self.game rollTheDice:self.game.diceArray[1]];
-    self.diceButton3.titleLabel.text = [self.game rollTheDice:self.game.diceArray[2]];
-    self.diceButton4.titleLabel.text = [self.game rollTheDice:self.game.diceArray[3]];
-    self.diceButton5.titleLabel.text = [self.game rollTheDice:self.game.diceArray[4]];
+    [self.game rollAllDice];
+    [self refreshView];
 }
 
 - (IBAction)resetDice:(id)sender {
-        if(self.game.diceArray[0]) {
-            self.diceButton1.titleLabel.text = @"⚀";
-            [self.diceButton1 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        }
-        else if (self.game.diceArray[1]){
-            self.diceButton2.titleLabel.text = @"⚁";
-            [self.diceButton2 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        }
-        else if (self.game.diceArray[2]){
-            self.diceButton3.titleLabel.text = @"⚂";
-            [self.diceButton3 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        }
-        else if (self.game.diceArray[3]) {
-            self.diceButton4.titleLabel.text = @"⚂";
-            [self.diceButton4 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        }
-        else if (self.game.diceArray[4]) {
-            self.diceButton5.titleLabel.text = @"⚃";
-            [self.diceButton5 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        }
+    [self.game resetDice];
+    [self.game rollAllDice];
+    [self refreshView];
+    
+    
 }
 
 -(void)refreshView {
-        NSArray *diceImages = @[@"⚀", @"⚁", @"⚂", @"⚃", @"⚄", @"⚅"];
-        self.diceButton1.titleLabel.text = diceImages[0];
-        self.diceButton2.titleLabel.text = diceImages[1];
-        self.diceButton3.titleLabel.text = diceImages[2];
-        self.diceButton4.titleLabel.text = diceImages[3];
-        self.diceButton5.titleLabel.text = diceImages[4];
+    NSLog(@"%@", self.game.diceArray);
+    [self refreshButton:self.diceButton1 forButtonNumber:1];
+    [self refreshButton:self.diceButton2 forButtonNumber:2];
+    [self refreshButton:self.diceButton3 forButtonNumber:3];
+    [self refreshButton:self.diceButton4 forButtonNumber:4];
+    [self refreshButton:self.diceButton5 forButtonNumber:5];
+ }
+
+-(void)refreshButton:(UIButton *)button forButtonNumber:(int)buttonNumber
+{
+    NSArray *diceImages = @[@"X", @"⚀", @"⚁", @"⚂", @"⚃", @"⚄", @"⚅"];
+    
+   // for(int i = 0; i < [self.game.diceArray count]; i++) {
+        NSLog(@"for loop began");
+        Dice *tempDie = self.game.diceArray[buttonNumber-1];
+        int dieValue = tempDie.dieValue;
+        BOOL isHeld = tempDie.isCurrentlyHeld;
+        
+        if(dieValue == 1) {
+            [button setTitle:diceImages[1] forState:UIControlStateNormal];
+            NSLog(@"dice image: %@", diceImages[1]);
+        }
+        else if(dieValue == 2) {
+           [button setTitle:diceImages[2] forState:UIControlStateNormal];
+        }
+        else if (dieValue == 3) {
+            [button setTitle:diceImages[3] forState:UIControlStateNormal];
+        }
+        else if(dieValue == 4) {
+            [button setTitle:diceImages[4] forState:UIControlStateNormal];
+        }
+        else if(dieValue == 5) {
+           [button setTitle:diceImages[5] forState:UIControlStateNormal];
+        }
+        if(isHeld){
+            [button setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+        }
+        else {
+            [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        }
+   // }
+   
 }
 
 

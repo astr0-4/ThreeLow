@@ -10,10 +10,28 @@
 
 @implementation Dice
 
--(void)holdDiceAndStoreInArray {
-    NSMutableArray *diceHeld = [[NSMutableArray alloc] init];
-    if(self.isCurrentlyHeld) {
-        [diceHeld addObject:self];
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _isCurrentlyHeld = NO;
+        _dieValue = 3;
+    }
+    return self;
+}
+
+
+//-(void)holdDiceAndStoreInArray {
+//    NSMutableArray *diceHeld = [[NSMutableArray alloc] init];
+//    if(self.isCurrentlyHeld) {
+//        [diceHeld addObject:self];
+//    }
+//}
+
+-(void)rollTheDie{
+    if(!self.isCurrentlyHeld) {
+        self.dieValue = arc4random_uniform(6)+1;
+        NSLog(@"die Value: %d", self.dieValue);
     }
 }
 

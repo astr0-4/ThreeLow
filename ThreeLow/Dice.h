@@ -12,6 +12,8 @@
 
 @property(nonatomic) BOOL isCurrentlyHeld;
 
-@property(nonatomic) NSString *textValue;
+@property(nonatomic) int dieValue;
+
+-(void)rollTheDie;
 
 @end

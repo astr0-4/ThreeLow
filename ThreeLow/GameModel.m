@@ -30,17 +30,26 @@
     return self;
 }
 
--(NSString *)rollTheDice:(Dice *)dice {
-    if(!dice.isCurrentlyHeld) {
-       return self.diceArray[arc4random_uniform(5)];
+-(void)rollAllDice
+{
+    for (int i = 0; i < self.diceArray.count; i++) {
+        [self.diceArray[i] rollTheDie];
     }
-    return nil;
+}
+
+-(void)resetDice
+{
+    for (int i = 0; i < self.diceArray.count; i++) {
+        Dice *tempDice = self.diceArray[i];
+        tempDice.isCurrentlyHeld = NO;
+    }
+   
 }
 
 //-(void)currentScoreTracker:(Dice *)dice {
 //    int currentScore = 0;
 //    for (int i = 0; i < [diceArray count]; i++) {
-//        if(dice.textValue isEqualToString:diceArray[i]) {
+//        if(dice.dieValue isEqualToString:diceArray[i]) {
 //            
 //            
 //        }

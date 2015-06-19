@@ -14,6 +14,9 @@
 @property(nonatomic, strong) NSArray *diceArray;
 
 -(instancetype)initWithDice;
--(NSString *)rollTheDice:(Dice *)dice;
+
+-(void)rollAllDice;
+
+-(void)resetDice;
 
 @end
