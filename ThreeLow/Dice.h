@@ -12,7 +12,9 @@
 
 @property(nonatomic) BOOL isCurrentlyHeld;
 
-@property(nonatomic) int dieValue;
+@property(nonatomic) NSNumber *dieValue;
+
+@property(nonatomic, strong) NSMutableArray* diceHeld;
 
 -(void)rollTheDie;
 

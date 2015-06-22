@@ -20,5 +20,6 @@
 
 @property (strong, nonatomic) GameModel *game;
 
+
 @end
 

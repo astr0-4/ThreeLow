@@ -13,10 +13,13 @@
 
 @property(nonatomic, strong) NSArray *diceArray;
 
+@property(nonatomic, strong) NSMutableArray *heldDiceArray;
+
 -(instancetype)initWithDice;
 
 -(void)rollAllDice;
 
--(void)resetDice;
+-(void)resetUnheldDice;
+
 
 @end

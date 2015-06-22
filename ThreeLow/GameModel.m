@@ -16,14 +16,13 @@
     self.diceArray = [[NSArray alloc] init];
     self = [super init];
     if (self) {
+         NSMutableArray *tempDiceArray = [[NSMutableArray alloc] init];
+        self.heldDiceArray = [[NSMutableArray alloc] init];
         
-        NSMutableArray *tempDiceArray = [[NSMutableArray alloc] init];
-        
-        [tempDiceArray addObject:[[Dice alloc] init]];
-        [tempDiceArray addObject:[[Dice alloc] init]];
-        [tempDiceArray addObject:[[Dice alloc] init]];
-        [tempDiceArray addObject:[[Dice alloc] init]];
-        [tempDiceArray addObject:[[Dice alloc] init]];
+        for (int i = 0; i < 5; i++) {
+             [tempDiceArray addObject:[[Dice alloc] init]];
+             [self.heldDiceArray addObject:[[Dice alloc] init]];
+        }
         
         self.diceArray = [NSArray arrayWithArray:tempDiceArray];
     }
@@ -37,15 +36,23 @@
     }
 }
 
--(void)resetDice
+-(void)resetUnheldDice
 {
     for (int i = 0; i < self.diceArray.count; i++) {
         Dice *tempDice = self.diceArray[i];
         tempDice.isCurrentlyHeld = NO;
     }
-   
 }
 
+-(void)getHeldDiceValues {
+    for (int i = 0; i < self.diceArray.count; i++) {
+        Dice *tempDice = self.diceArray[i];
+        if(tempDice.isCurrentlyHeld) {
+            [self.heldDiceArray addObject:tempDice.dieValue];
+        }
+    }
+     NSLog(@"held dice: %@", self.heldDiceArray);
+}
 //-(void)currentScoreTracker:(Dice *)dice {
 //    int currentScore = 0;
 //    for (int i = 0; i < [diceArray count]; i++) {
